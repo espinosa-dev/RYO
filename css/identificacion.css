@@ -1,0 +1,142 @@
+:root {
+    --bg-color: #e6e8eb;
+    --bg-color2: rgba(255, 255, 255, 0.4);
+    --border-color: rgba(255, 255, 255, 0.5);
+    --border-glass: rgba(255, 255, 255, 0.4);
+    
+    /* Paleta basada en tu logo (imagen_2.png) */
+    --logo-blue: #0076ff;
+    --logo-blue-gradient: linear-gradient(135deg, #00d2ff 0%, #004cff 100%);
+    --logo-dark-blue: #001f3f;
+    --text-primary: #1e1e24;
+    --text-secondary: #5e6472;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top right, #f0f4f8, #d7dde4);
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Contenedor central */
+main.login-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Tarjeta permanente */
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 48px 40px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--border-glass);
+    border-radius: 28px;
+    box-shadow: 0 16px 40px rgba(0, 76, 255, 0.05), 
+                0 4px 12px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.login-card .subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+/* Inputs minimalistas y pulidos */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.55);
+    outline: none;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group input:focus {
+    border-color: var(--logo-blue);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 4px rgba(0, 118, 255, 0.12);
+}
+
+/* Enlaces y acciones */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+}
+
+.forgot-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: var(--logo-blue);
+    text-decoration: none;
+}
+
+/* Botón principal del logo */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--logo-blue-gradient);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 76, 255, 0.25);
+    transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 76, 255, 0.35);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}

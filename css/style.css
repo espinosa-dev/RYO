@@ -1,0 +1,157 @@
+:root {
+    --bg-color: #e2e2e2;
+    --bg-color2: #d3d3d3;
+    --border-color: #c0c0c0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Evita que el padding sume tamaño extra */
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+}
+
+aside {
+    background-color: var(--bg-color2);
+    position: sticky;
+    
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    padding: 20px;
+    border-radius: 0px 25px 25px 0px;
+    border: 2px solid var(--border-color);
+    overflow-y: auto;
+
+    transition: width 0.3s ease, padding 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+aside.hidden {
+    width: 80px;
+    padding: 20px 10px;
+}
+
+aside.hidden img {
+    display: none;
+}
+
+aside.hidden ul li {
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+aside.hidden ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+aside.hidden .nav-text {
+    display: none;
+}
+
+aside.hidden ul li .material-symbols-rounded {
+    font-size: 24px; 
+}
+
+aside.hidden > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+}
+
+aside > ul {
+    list-style: none;
+}
+
+aside > ul > li {
+    padding: 10px;
+    margin: 15px;
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.25); /* Semi-transparent white base */
+    backdrop-filter: blur(10px);            /* Blurs whatever is behind the element */
+    -webkit-backdrop-filter: blur(10px);    /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle bright edge */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+aside > ul > li:hover{
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    cursor: pointer;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+aside > div {
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+aside > div > img {
+    width: 100px;
+    margin-left: -10px;
+}
+
+aside > div > button {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+aside > div > button:hover{
+    cursor: pointer;
+}
+
+button#exitPlatformButton:hover{
+    background-color: #ff7777;
+    color: #fff;
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+
+button#showPlatformConfigurationOverlay:hover{
+    cursor: pointer;
+}
+
+button#arrowAsideButton:hover{
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
