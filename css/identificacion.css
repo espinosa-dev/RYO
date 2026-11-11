@@ -4,6 +4,7 @@
     --border-color: rgba(255, 255, 255, 0.5);
     --border-glass: rgba(255, 255, 255, 0.4);
     
+    /* Paleta basada en tu logo (imagen_2.png) */
     --logo-blue: #0076ff;
     --logo-blue-gradient: linear-gradient(135deg, #00d2ff 0%, #004cff 100%);
     --logo-dark-blue: #001f3f;
@@ -34,7 +35,7 @@ main.login-container {
     padding: 40px;
 }
 
-
+/* Tarjeta permanente */
 .login-card {
     width: 100%;
     max-width: 420px;
@@ -95,18 +96,6 @@ main.login-container {
     border-color: var(--logo-blue);
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 0 4px rgba(0, 118, 255, 0.12);
-}
-
-.error-message {
-    color: #e53935;
-    font-size: 0.78rem;
-    margin-top: 4px;
-    display: none; /* Oculto por defecto */
-}
-
-.input-group input.input-error {
-    border-color: #e53935;
-    box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.15);
 }
 
 /* Enlaces y acciones */
