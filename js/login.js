@@ -22,4 +22,3 @@ function loginAuth (user, password) {
         throw new loggedError;
     }
 }
-
