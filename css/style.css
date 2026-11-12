@@ -2,6 +2,12 @@
     --bg-color: #e2e2e2;
     --bg-color2: #d3d3d3;
     --border-color: #c0c0c0;
+
+    --logo-blue: #0076ff;
+    --logo-blue-gradient: linear-gradient(135deg, #00d2ff 0%, #004cff 100%);
+    --logo-dark-blue: #001f3f;
+    --text-primary: #1e1e24;
+    --text-secondary: #5e6472;
 }
 
 * {
@@ -28,7 +34,7 @@ aside {
     border: 2px solid var(--border-color);
     overflow-y: auto;
 
-    transition: width 0.3s ease, padding 0.3s ease;
+    transition: width 0.3s ease-out, padding 0.3s ease-out;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -144,11 +150,15 @@ button#exitPlatformButton:hover{
 
 
 button#showPlatformConfigurationOverlay:hover{
-    cursor: pointer;
+    background-color: #757575;
+    color: #fff;
+    border-color: #fff;
+    transform: scale(1.05);
 }
 
 button#arrowAsideButton:hover{
-    cursor: pointer;
+    border-color: #fff;
+    transform: scale(1.05);
 }
 
 main {
