@@ -22,3 +22,5 @@ function loginAuth (user, password) {
         throw new loggedError;
     }
 }
+
+let user = loginForm.getElementsByClassName("")
