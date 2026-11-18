@@ -1,0 +1,17 @@
+:root {
+    --bg-color: #e2e2e2;
+    --bg-color2: #d3d3d3;
+    --border-color: #c0c0c0;
+
+    --logo-blue: #0076ff;
+    --logo-blue-gradient: linear-gradient(135deg, #00d2ff 0%, #004cff 100%);
+    --logo-dark-blue: #001f3f;
+    --text-primary: #1e1e24;
+    --text-secondary: #5e6472;
+
+    /* Tamaños de letras */
+
+    --font-family: "Roboto-Regular", sans-serif;
+    --font-weight: 100;
+    --title1-size: 72px;
+}

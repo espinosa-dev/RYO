@@ -1,16 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
-
-:root {
-    --bg-color: #e2e2e2;
-    --bg-color2: #d3d3d3;
-    --border-color: #c0c0c0;
-
-    --logo-blue: #0076ff;
-    --logo-blue-gradient: linear-gradient(135deg, #00d2ff 0%, #004cff 100%);
-    --logo-dark-blue: #001f3f;
-    --text-primary: #1e1e24;
-    --text-secondary: #5e6472;
-}
+@import "./root.css";
+@import "./home.css";
+@import "./fonts.css";
 
 * {
     margin: 0;
@@ -23,9 +13,8 @@ body {
     background-color: var(--bg-color);
     display: flex;
     height: 100vh;
-    font-family: "Google Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
     overflow: hidden;
 }
 
@@ -40,11 +29,13 @@ aside {
 
     position: sticky;
     
+    margin-top: 10px;
+    margin-left: 10px;
     top: 0;
-    height: 100vh;
+    height: 97vh;
     width: 300px;
     padding: 20px;
-    border-radius: 0px 12px 12px 0px;
+    border-radius: 12px 12px 12px 12px;
     /* border: 2px solid var(--border-color); */
     overflow-y: auto;
 
@@ -57,6 +48,8 @@ aside {
 aside.hidden {
     width: 80px;
     padding: 20px 10px;
+    overflow: visible;
+    z-index: 2;
 }
 
 aside.hidden img {
@@ -64,6 +57,7 @@ aside.hidden img {
 }
 
 aside.hidden ul li {
+    position: relative;
     padding: 0;
     width: 48px;
     height: 48px;
@@ -71,6 +65,36 @@ aside.hidden ul li {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+aside.hidden ul li::after,
+aside.hidden > div > button::after {
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: var(--logo-dark-blue);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    content: attr(data-tooltip);
+    font-family: var(--font-family);
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+aside.hidden ul li:hover::after,
+aside.hidden ul li:focus-within::after,
+aside.hidden > div > button:hover::after,
+aside.hidden > div > button:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 aside.hidden ul li a {
@@ -96,6 +120,10 @@ aside.hidden > div {
     padding: 0;
 }
 
+aside.hidden > div > button {
+    position: relative;
+}
+
 aside > ul {
     list-style: none;
 }
@@ -114,16 +142,30 @@ aside > ul > li {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
+aside > ul > li.active {
+    background-color: var(--logo-blue);
+}
+
+aside > ul > li.active > a {
+    color: var(--bg-color)
+}
+
+aside > ul > li > a {
+    color: var(--logo-dark-blue);
+}
+
 aside > ul > li:hover{
-    background: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
     cursor: pointer;
+}
 
+aside > ul > li.active:hover{
+    transform: translateY(-2px);
+    cursor: pointer;
 }
 
 a {
     text-decoration: none;
-    color: black;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -164,13 +206,8 @@ button#exitPlatformButton:hover{
 
 
 button#showPlatformConfigurationOverlay:hover{
-    background-color: #757575;
+    background-color: rgba(138, 138, 138, 0.849);
     color: #fff;
-    border-color: #fff;
-    transform: scale(1.05);
-}
-
-button#arrowAsideButton:hover{
     border-color: #fff;
     transform: scale(1.05);
 }
@@ -181,24 +218,33 @@ button#arrowAsideButton:hover{
     flex-direction: column;
     min-width: 0;
     min-height: 0;
+
+    margin: 10px;
+    height: 97vh;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.workspace-header {
+.workspace-occurrences-header {
     display: flex;
     height: 100px;
     align-items: center;
     justify-content: flex-end;
     gap: 12px;
-    background-color: var(--bg-color);
     padding: 20px 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--logo-blue);
 }
 
-.workspace-header > div {
+.workspace-occurrences-header > div {
     flex: 0 1 320px;
 }
 
-.workspace-header input {
+.workspace-occurrences-header input {
     width: 100%;
     min-width: 0;
     padding: 12px;
