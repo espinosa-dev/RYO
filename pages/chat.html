@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RYO | Resolve Your Occurrences | Chat</title>
+    <link rel="icon" type="image/x-icon" href="../assets/ryo-favicon.ico">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@28,400,0,0&icon_names=settings,logout,left_panel_close,right_panel_close,home,bug_report,add,note_add,comment,add_a_alternate,delete,chat,mark_unread_chat_alt" />
+</head>
+<body>
+    <aside class="hidden" id="navBar">
+        <ul>
+            <li data-tooltip="Inicio">
+                <a href="./home.html" aria-label="Inicio">
+                    <span class="material-symbols-rounded">home</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+            </li>
+            <li data-tooltip="Incidencias">
+                <a href="./ocurrences.html" aria-label="Incidencias">
+                    <span class="material-symbols-rounded">bug_report</span>
+                    <span class="nav-text">Incidencias</span>
+                </a>
+            </li>
+            <li class="active" data-tooltip="Chat">
+                <a href="./chat.html" aria-label="Chat">
+                    <span class="material-symbols-rounded">chat</span>
+                    <span class="nav-text">Chat</span>
+                </a>
+            </li>
+        </ul>
+        <div>
+            <button id="showPlatformConfigurationOverlay" aria-label="Configuración" data-tooltip="Configuración">
+                <span class="material-symbols-rounded">settings</span>
+            </button>
+
+
+            <button id="exitPlatformButton" aria-label="Cerrar sesión" data-tooltip="Cerrar sesión">
+                <span class="material-symbols-rounded">logout</span>
+            </button>
+        </div>
+    </aside>
+    <div class="workspace">
+        <header class="workspace-chat-header">
+            <div>
+                <input type="search" id="user" placeholder="Buscar" aria-label="Buscar" />
+            </div>
+        </header>
+        <main class="workspace-content">
+            
+        </main>
+    </div>
+
+
+    <script src="../js/buttons.js"></script>
+</body>
+
+</html>
