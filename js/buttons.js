@@ -1,24 +1,16 @@
 
-const logoutButton = document.getElementById("arrowAsideButton");
-const aside = document.getElementById("navBar")
-let listItems = aside.querySelectorAll("ul li");
+const aside = document.getElementById("navBar");
+const listItems = aside.querySelectorAll("ul li");
 
-logoutButton.addEventListener("click", () => {
+listItems.forEach((listItem) => {
+    listItem.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+            return;
+        }
 
-    if (aside.classList.contains("hidden")) {
-        logoutButton.innerHTML = `
-            <span class="material-symbols-rounded">right_panel_close</span>
-            `;
-        aside.classList.remove("hidden")
-    } else {
-        logoutButton.innerHTML = `
-            <span class="material-symbols-rounded">left_panel_close</span>
-            `;
-        
-        aside.classList.add("hidden")
-    }
-})
-
-let transformToIcons = (listItems) => {
-    
-}
+        const link = listItem.querySelector("a");
+        if (link) {
+            link.click();
+        }
+    });
+});
