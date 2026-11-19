@@ -1,26 +1,16 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.119.0";
-
-const supabase = createClient('https://rfsvjzrdvnjajvuannai.supabase.co', 'sb_publishable_AWoXyOtVqH6tq5HxOh54Gw_wJsDIyPS');
-const { data } = await supabase.from('profiles').select('*');
 const loginForm = document.getElementById("loginForm");
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
 
-console.log(supabase);
+loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-function loginAuth (user, password) {
-    let logged
-    let session;
-    data.forEach(user => {
-        if (user.usr_username.localeCompare(user)) {
-            session = user;
-            if (user.password === password){
-                logged = true;
-                return session;
-            }
-        }
-    });
-    if (!logged) {
-        throw new loggedError;
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    if (username === "Alvaro" && password === "1234") {
+        window.location.href = "./pages/home.html";
+    } else {
+        alert("Wrong password");
     }
-}
-
-let user = loginForm.getElementsByClassName("")
+});
